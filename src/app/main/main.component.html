@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-9">
+      <div class="row justify-content-center">
+        <div class="col-sm-12">
+          <h5 class="display-4">Enter number for Pattern</h5>
+          <div class="form">
+            <form #patternForm="ngForm" (submit)="onSubmit(patternForm)">
+              <div class="form-group">
+                <label for="number">Enter the odd Number</label>
+                <input class="form-control" [(ngModel)]="number" type="number" name="number" id="number" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Generate</button>
+            </form>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="pattern" *ngIf="pattern.length > 0">
+            <div class="card">
+                <div class="card-body">
+                  <div class="pattern-inner text-center" *ngFor="let item of pattern">
+                    {{item}}
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
